@@ -157,7 +157,7 @@ module Games
 			second_team_score = gets.chomp.to_i
 			puts ""
 		else
-			puts "\n\nSorry not a valid team name, try again."
+			puts "\n\nSorry not a valid team name, try again. (re-enter both teams)"
 			enter_interleague_game(league_1,league_2,name_1,name_2,array_1,array_2)
 		end
 		calculate_interleague_points(first_team,second_team,first_team_score,second_team_score,league_1,league_2)
@@ -232,7 +232,7 @@ class LPC
 	end
 
 	def league_play()
-		print "0 for American League, 1 for National League: "
+		print "([0]: American League, [1]: National League): "
 		user_input = gets.chomp.to_i
 		if (user_input == 0)
 			american_league
@@ -242,7 +242,7 @@ class LPC
 	end
 
 	def american_league()
-		print "\nGenerate League Game (0) or Enter League Game (1): "
+		print "\n([0]: Generate League Game, [1]: Enter League Game): "
 		user_input = gets.chomp.to_i
 		if user_input == 0
 			generate_league_game(@american_league_hash,@american_league_name)
@@ -253,7 +253,7 @@ class LPC
 	end
 
 	def national_league()
-		print "\nGenerate League Game (0) or Enter League Game (1): "
+		print "\n([0]: Generate League Game, [1]: Enter League Game): "
 		user_input = gets.chomp.to_i
 		if user_input == 0
 			generate_league_game(@national_league_hash,@national_league_name)
@@ -265,7 +265,7 @@ class LPC
 	end
 
 	def interleague_play()
-		print "\nGenerate Interleague Game (0) or Enter Interleague Game (1): "
+		print "\n([0]: Generate Interleague Game, [1]: Enter Interleague Game): "
 		user_input = gets.chomp.to_i
 		if user_input == 0
 			generate_interleague_game(@american_league_hash,@national_league_hash,@american_league_name,@national_league_name)
