@@ -74,8 +74,9 @@ module Games
 		
 		calculate_league_points(first_team,second_team,first_team_score,second_team_score,league)
 
-		print_leaderboard_league(league,name)
-
+		print "\nWould you like to print the Leaderboard (Y/N): "
+		print_leaderboard = gets.chomp.upcase
+		print_leaderboard_league(league,name) if print_leaderboard == 'Y'	
 	end
 
 	def generate_interleague_game(league_1,league_2,name_1,name_2)
@@ -94,7 +95,10 @@ module Games
 	
 		calculate_interleague_points(first_team,second_team,first_team_score,second_team_score,league_1,league_2)
 
-		print_leaderboard_interleague(league_1,league_2,name_1,name_2)
+		print "\nWould you like to print the Leaderboard (Y/N): "
+		print_leaderboard = gets.chomp.upcase
+		print_leaderboard_interleague(league_1,league_2,name_1,name_2) if print_leaderboard == 'Y'
+		
 	end
 
 	def enter_league_game(league,name,array)
@@ -126,7 +130,9 @@ module Games
 
 		calculate_league_points(first_team,second_team,first_team_score,second_team_score,league)
 
-		print_leaderboard_league(league,name)
+		print "\nWould you like to print the Leaderboard (Y/N): "
+		print_leaderboard = gets.chomp.upcase
+		print_leaderboard_league(league,name) if print_leaderboard == 'Y'
 	end
 
 	def enter_interleague_game(league_1,league_2,name_1,name_2,array_1,array_2)
@@ -150,7 +156,7 @@ module Games
 		puts name_2
 		puts ""
 		puts array_2
-		print "\nnter second team name (case_sensitive): "
+		print "\nEnter second team name (case_sensitive): "
 		second_team = gets.chomp
 		if array_2.include?(second_team)
 			print "How many runs: "
@@ -161,7 +167,10 @@ module Games
 			enter_interleague_game(league_1,league_2,name_1,name_2,array_1,array_2)
 		end
 		calculate_interleague_points(first_team,second_team,first_team_score,second_team_score,league_1,league_2)
-		print_leaderboard_interleague(league_1,league_2,name_1,name_2)
+	
+		print "\nWould you like to print the Leaderboard (Y/N): "
+		print_leaderboard = gets.chomp.upcase
+		print_leaderboard_interleague(league_1,league_2,name_1,name_2) if print_leaderboard == 'Y'
 	end
 end
 
